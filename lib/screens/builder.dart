@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_business_govnz_api/models/builders.dart';
-import 'package:flutter_business_govnz_api/services/practitioner_service.dart';
+import 'package:flutter_business_govnz_api/services/http_fetch_api.dart';
 import 'package:provider/provider.dart';
 
 class BuilderPage extends StatelessWidget {
