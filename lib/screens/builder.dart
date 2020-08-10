@@ -6,24 +6,29 @@ import 'package:provider/provider.dart';
 class BuilderPage extends StatelessWidget {
   final int id;
   final String name;
-  final BuildPractitionerService buildPractitionerService = BuildPractitionerService();
+  final BuildPractitionerService buildPractitionerService =
+      BuildPractitionerService();
 
   BuilderPage({@required this.id, @required this.name});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(name),),
-      body: FutureProvider( 
-        create: (context) => buildPractitionerService.fetchBuilder(id),
-        child:  Center(child: Consumer<BuildPractitioner>( 
-          builder: (context, employee, widget) {
-            return (employee !=null) ? Text('Employee Phone: ${employee.phone}')
-            : CircularProgressIndicator();
-          },
-        )
-        ,),
-      )
-    );
+        appBar: AppBar(
+          title: Text(name),
+        ),
+        body: FutureProvider(
+          create: (context) => buildPractitionerService.fetchBuilder(id),
+          child: Center(
+            child: Consumer<BuildPractitioner>(
+              builder: (context, employee, widget) {
+                return (employee != null)
+                    ? Text(
+                        'Employee: ${employee.name} Phone:${employee.phone}')
+                    : CircularProgressIndicator();
+              },
+            ),
+          ),
+        ));
   }
 }

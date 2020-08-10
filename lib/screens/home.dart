@@ -25,10 +25,10 @@ class Home extends StatelessWidget {
                     title: Text(buildPractitioner[index].name),
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => BuilderPage(
-                                id: buildPractitioner[index].id,
-                                name: buildPractitioner[index].name,
-                              )));
+                        builder: (context) => BuilderPage(
+                           id: buildPractitioner[index].id,
+                           name: buildPractitioner[index].name,
+                            )));
                     },
                   );
                 }));
